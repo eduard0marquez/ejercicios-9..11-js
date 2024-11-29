@@ -79,14 +79,81 @@ function ejercicio8(){
 }
 
 function ejercicio9(){
-    alert("Por el momento el ejercicio no esta disponible para su ejecución")
+    let palabra=prompt("Ingresa una Palabra");//Se solicita el ingreso de una palabra
+    let index=0;//Se crea la variable index y se asigna el valor 0
+    let letraCompara=palabra.charAt(index); //Se extrae el caracter equivalente al indice 0 (La primer letra)
+    let letras="";//Inicio la variable con valor 'vacio'
+    while(letraCompara!=''){ //Se declara un ciclo el cual se estara repitiendo hasta que la letra a comparar sea igual a '' es decir el final de la palabra
+        index=index+1;//Se crea el contador para que aumente 1 cada que entra en el ciclo
+        if(letraCompara=='a'|| letraCompara=='e'|| letraCompara=='i'|| letraCompara=='o'|| letraCompara=='u' ){ //Se crea la condicion de cuando la letra equivalente al indice sea igual a 'a','e,'i','o,'u' 
+            letras=letras + letraCompara;//En caso de ser verdadera la condicion la variable letra toma el valor de si misma mas la letra correspondiente al indice del momento
+        }
+        letraCompara=palabra.charAt(index);//La letra que a comprarar toma el nuevo valor del indice para que avance un caracter a la derecha      
+    }
+    alert("Las vocales de la palabra "+"' " +palabra+" '"+ " son : "+letras); //Se imprime en pantalla el valor de todas las letras que coinsidieron con la condicion anterior
 }
 
 function ejercicio10(){
-    alert("Por el momento el ejercicio no esta disponible para su ejecución")
+    let numero=prompt("Escribe un Número");//Se solicita el ingreso de un numero
+    let index=0;//Se crea la variable index y se asigna el valor 0
+    let division= 0;//Se crea la variable divicion y se asigna el valor 0
+    let entero=0;//Se crea la variable entero y se asigna el valor 0
+    let decimal=(parseFloat(division)-entero);
+    while (index!=7){//Se crea el ciclo que se repetira hasta que el index deje de ser diferente a 7
+        if(index!=2){ //Se condiciona a que el indice sea diferente a 2 para que cuando esto pase se cuente de dos en dos
+            index=index+2; //al valor del indice se suman 2 
+            division= numero/index; //se divide el numero proporcionado entre el valor del indice
+            entero=parseInt(division); //se pasa el valor de la divicion a numeros enteros
+            decimal=(parseFloat(division)-entero); //se pasa el valor de la divicion a decimales pero restandole el valor entero de la variable anterior,de este modo quedaran puros decimales
+            if(decimal==0){//si el numero en decimales da 0 como resultado quiere decir que si es divisible entre el numero del indice
+                alert("El "+ numero + " Es divisible entre "+index+" y da como resultado : " + division); //se imprime la leyenda que el numero es divisible entre el indice
+                break; //Se rompe para que sea el resultado Final
+            }
+        }
+        else{  //en caso de que el valor del inice sea 2 se aumentara solo 1 
+              index=index+1; //Al valor del indice se le suma 1
+              division= numero/index; //se divide el numero proporcionado entre el valor del indice
+              entero=parseInt(division);//se pasa el valor de la divicion a numeros enteros
+              decimal=(parseFloat(division)-entero);//se pasa el valor de la divicion a decimales pero restandole el valor entero de la variable anterior,de este modo quedaran puros decimales
+              if(decimal==0){//si el numero en decimales da 0 como resultado quiere decir que si es divisible entre el numero del indice
+                alert("El "+ numero + " Es divisible entre "+index+" y da como resultado : " + division);//se imprime la leyenda que el numero es divisible entre el indice
+                break;//Se rompe para que sea el resultado Final
+            }       
+    }
+   
+}
 
 }
 
 function ejercicio11(){
-    alert("Por el momento el ejercicio no esta disponible para su ejecución")
+    let numero=prompt("Escribe un Número");//Se declara la variable numero que es igual al ingreso de un numero
+    let index=0;//Se declara la variable index y se asigna el valor 0
+    let division= 0;//Se declara la variable divis y se asigna el valor 0
+    let entero=0;//Se declara la variable index y se asigna el valor 0
+    let decimal=(parseFloat(division)-entero); //Se declara la variable decimal y se asigna el valor en decimales igual al valor ingresado menos el valor de la variable entera
+    let divisibles=''; //Se declara la variable divisibles y se asigna como valor vacio
+
+
+    while (index!=7){ //Se crea el ciclo que se repetira hasta que el index deje de ser diferente a 7
+        if(index!=2){ //Se condiciona a que el indice sea diferente a 2 para que cuando esto pase se cuente de dos en dos
+            index=index+2;//Al valor del index se suman 2 
+            division= numero/index; //Se divide el numero proporcionado entre el valor del indice
+            entero=parseInt(division);//Se pasa el valor de la divicion a numeros enteros
+            decimal=(parseFloat(division)-entero); //se pasa el valor de la divicion a decimales pero restandole el valor entero de la variable anterior,de este modo quedaran puros decimales
+            if(decimal==0){ //si el numero en decimales da 0 como resultado quiere decir que si es divisible entre el numero del indice
+              divisibles=divisibles.concat(' entre '+index);//A la variable divisibles se le asigna el valor de la misma variable contatenando la palabra entre y luego el valor del indice
+            }
+        }
+        else{  
+              index=index+1;//Al valor del index se suma 1
+              division= numero/index; //Se divide el numero proporcionado entre el valor del indice
+              entero=parseInt(division);//Se pasa el valor de la divicion a numeros enteros
+              decimal=(parseFloat(division)-entero); //se pasa el valor de la divicion a decimales pero restandole el valor entero de la variable anterior,de este modo quedaran puros decimales
+              if(decimal==0){ //si el numero en decimales da 0 como resultado quiere decir que si es divisible entre el numero del indice
+                divisibles=divisibles.concat(' entre ').concat(index);  //A la variable divisibles se le asigna el valor de la misma variable contatenando la palabra entre y luego el valor del indice  
+            }              
+        } 
+    } 
+    alert("El "+ numero + " Es divisible "+divisibles); //Se imprime el mensaje de que el numero ingresado es divisible por el valor ya acumulado en la variable divisibles
+
 }
